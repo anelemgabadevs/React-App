@@ -1,0 +1,60 @@
+import * as React from "https://cdn.skypack.dev/react@17.0.1";
+import * as ReactDOM from "https://cdn.skypack.dev/react-dom@17.0.1";
+
+function App() {
+  return (
+    <div className="wrapper">
+      <Card
+        img="https://www.mweb.co.za/media/images/providers/provider-openserve.png"
+        title="25Mbps Uncapped Fibre"
+        description="Unthrottled"
+        line="FREE Installation + Router"
+        price="R499pm"
+      />
+
+      <Card
+        img="https://www.mweb.co.za/media/images/providers/provider-openserve.png"
+        title="50Mbps uncapped"
+        description="Unthrottled"
+        line="FREE Installation + Router"
+        price="R689pm"
+      />
+
+      <Card
+        img="https://www.mweb.co.za/media/images/providers/provider-openserve.png"
+        title="50Mbps uncapped fibre lite"
+        description="Unthrottled"
+        line="FREE Installation + Router"
+        price="R679pm"
+      />
+    </div>
+  );
+}
+
+function CoverageButton({ onClick }) {
+  return (
+    <button className="card__btn" 
+      onClick="{onClick}">
+      Check Coverage
+    </button>
+  );
+}
+
+function Card(props) {
+  return (
+    <div className="card">
+      <div className="card__body">
+        <h4 className="card__title">{props.title}</h4>
+        <p className="card__description">{props.description}</p>
+        <p className="card__description">{props.line}</p>
+      </div>
+      <div className="subcard">
+        <h3 className="card_price">{props.price}</h3>
+        <img src={props.img} class="card__image" />
+        <CoverageButton onClick="{onClick}" />
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));
